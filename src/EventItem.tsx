@@ -39,10 +39,10 @@ const EventItem: FC<EventItemProps> = ({
       key={`item-d-${event?.id}-${rowId}`}
     >
       <Box sx={boxSx}>
-        <Typography variant="body2" sx={{ fontSize: 11 }}>
+        <Typography variant="body2" sx={{ fontSize: 14 }}>
           {event?.label}
         </Typography>
-        <Typography variant="caption" sx={{ fontSize: 8 }}>
+        <Typography variant="caption" sx={{ fontSize: 11 }}>
           {format(event?.startDate, "p", { locale: dateFnsLocale })}
           {" - "}
           {format(event?.endDate, "p", { locale: dateFnsLocale })}
