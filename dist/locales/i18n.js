@@ -27,11 +27,12 @@ const resources = {
 };
 const i18n = (0, i18next_1.createInstance)({
     resources,
-    lng: localStorage.getItem("i18nextLng"),
+    // lng: localStorage.getItem("i18nextLng") as string,
+    lng: "es",
     ns: ["common"],
     defaultNS: "common",
     fallbackNS: "common",
-    fallbackLng: ["en", "fr", "dev"],
+    fallbackLng: ["en", "es", "dev"],
     debug: false,
     interpolation: {
         escapeValue: false, // not needed for react as it escapes by default
