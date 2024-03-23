@@ -34,7 +34,7 @@ const date_fns_1 = require("date-fns");
 const dateFnsContext_1 = __importDefault(require("./locales/dateFnsContext"));
 const EventItem = ({ event, rowId, sx, boxSx, elevation, onClick, onDragStart, }) => {
     const dateFnsLocale = (0, react_1.useContext)(dateFnsContext_1.default);
-    return (react_1.default.createElement(Paper_1.default, { sx: sx, draggable: true, onClick: onClick, onDragStart: onDragStart, elevation: elevation || 0, key: `item-d-${event?.id}-${rowId}` },
+    return (react_1.default.createElement(Paper_1.default, { sx: sx, draggable: false, onClick: onClick, onDragStart: onDragStart, elevation: elevation || 0, key: `item-d-${event?.id}-${rowId}` },
         react_1.default.createElement(Box_1.default, { sx: boxSx },
             react_1.default.createElement(Typography_1.default, { variant: "body2", sx: { fontSize: 11 } }, event?.label),
             react_1.default.createElement(Typography_1.default, { variant: "caption", sx: { fontSize: 8 } },

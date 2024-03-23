@@ -32,7 +32,7 @@ const EventItem: FC<EventItemProps> = ({
   return (
     <Paper
       sx={sx}
-      draggable
+      draggable={false}
       onClick={onClick}
       onDragStart={onDragStart}
       elevation={elevation || 0}
