@@ -181,26 +181,26 @@ const MonthModeView: FC<MonthModeViewProps> = ({
     events?.map((event: Event) =>
       searchResult
         ? event?.groupLabel === searchResult?.groupLabel ||
-          event?.user === searchResult?.user
+        event?.user === searchResult?.user
         : !searchResult && (
-            <EventItem
-              event={event}
-              rowId={rowId}
-              elevation={0}
-              boxSx={{ px: 0.5 }}
-              key={`item-d-${event?.id}-${rowId}`}
-              onClick={(e) => handleTaskClick(e, event)}
-              onDragStart={(e) => onCellDragStart(e, event, rowId)}
-              sx={{
-                width: "100%",
-                py: 0,
-                my: 0.3,
-                color: theme.palette.common.white,
-                backgroundColor: event?.color || theme.palette.primary.light,
-                textAlign: "left",
-              }}
-            />
-          ),
+          <EventItem
+            event={event}
+            rowId={rowId}
+            elevation={0}
+            boxSx={{ px: 0.5 }}
+            key={`item-d-${event?.id}-${rowId}`}
+            onClick={(e) => handleTaskClick(e, event)}
+            onDragStart={(e) => onCellDragStart(e, event, rowId)}
+            sx={{
+              width: "100%",
+              py: 0,
+              my: 0.3,
+              color: theme.palette.common.white,
+              backgroundColor: event?.color || theme.palette.primary.light,
+              textAlign: "left",
+            }}
+          />
+        ),
     );
 
   const handleTaskClick = (
@@ -258,12 +258,13 @@ const MonthModeView: FC<MonthModeViewProps> = ({
                       {!legacyStyle &&
                         index === 0 &&
                         columns[indexD]?.headerName?.toUpperCase()}
-                      .
+                      {/* . */}
                       <Typography
                         variant="body2"
                         sx={
                           {
                             ...currentDaySx,
+                            textAlign: "center",
                             background:
                               currentDay &&
                               alpha(theme.palette.primary.main, 1),

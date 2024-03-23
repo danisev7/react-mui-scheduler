@@ -166,9 +166,9 @@ const MonthModeView = ({ rows = [], options, columns = [], legacyStyle, searchRe
                         !legacyStyle &&
                             index === 0 &&
                             columns[indexD]?.headerName?.toUpperCase(),
-                        ".",
                         react_1.default.createElement(Typography_1.default, { variant: "body2", sx: {
                                 ...currentDaySx,
+                                textAlign: "center",
                                 background: currentDay &&
                                     (0, styles_1.alpha)(theme.palette.primary.main, 1),
                                 color: currentDay && theme.palette.common.white,
