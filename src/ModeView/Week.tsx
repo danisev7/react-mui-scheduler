@@ -139,7 +139,7 @@ const WeekModeView: FC<WeekModeViewProps> = ({
     const rowsData = Array.from(rows as Row[]);
     const day =
       rowsData[transferTarget.rowIndex as number]?.days[
-        transferTarget.dayIndex as number
+      transferTarget.dayIndex as number
       ];
 
     if (day) {
@@ -209,7 +209,7 @@ const WeekModeView: FC<WeekModeViewProps> = ({
     events?.map((event: Event, itemIndex: number) => {
       const condition = searchResult
         ? event?.groupLabel === searchResult?.groupLabel ||
-          event?.user === searchResult?.user
+        event?.user === searchResult?.user
         : !searchResult;
       return (
         condition && (
@@ -267,7 +267,7 @@ const WeekModeView: FC<WeekModeViewProps> = ({
                 align="center"
                 key={`weekday-${column?.day}-${index}`}
               >
-                {column?.weekDay} {column?.month}/{column?.day}
+                {column?.weekDay} {column?.day}/{column?.month}
               </StyledTableCell>
             ))}
           </TableRow>

@@ -177,9 +177,9 @@ const WeekModeView = ({ options, columns, rows, searchResult, onTaskClick, onCel
                     columns?.map((column, index) => (react_1.default.createElement(StyledTableCell, { align: "center", key: `weekday-${column?.day}-${index}` },
                         column?.weekDay,
                         " ",
-                        column?.month,
+                        column?.day,
                         "/",
-                        column?.day))))),
+                        column?.month))))),
             react_1.default.createElement(TableBody_1.default, null, rows?.map((row, rowIndex) => (react_1.default.createElement(TableRow_1.default, { key: `timeline-${rowIndex}` },
                 react_1.default.createElement(Tooltip_1.default, { placement: "right", title: t("eventWeekTimelineCount", {
                         count: row.days?.reduce((prev, curr) => prev + curr?.events?.length, 0),
