@@ -257,6 +257,8 @@ const Scheduler = ({ events, locale = "en", options, alertProps, onCellClick, le
         for (let i = 0; i <= HOURS; i++) {
             const id = `line_${i}`;
             const label = (0, date_fns_1.format)(dayStartHour, "p", { locale: dateFnsLocale });
+            const dayEndHour = (0, date_fns_1.add)(dayStartHour, { minutes: 60 });
+            const labelEnd = (0, date_fns_1.format)(dayEndHour, "p", { locale: dateFnsLocale });
             //TODO Add everyday event capability
             //if (i === 0) {
             //id = `line_everyday`; label = 'Everyday'
@@ -265,7 +267,8 @@ const Scheduler = ({ events, locale = "en", options, alertProps, onCellClick, le
             // ...
             if (i > 0) {
                 //Start processing bloc
-                const obj = { id, label, days: [] };
+                const label2 = label + " - " + labelEnd;
+                const obj = { id, label: label2, days: [] };
                 const columns = getWeekHeader();
                 // eslint-disable-next-line
                 columns.map((column, index) => {

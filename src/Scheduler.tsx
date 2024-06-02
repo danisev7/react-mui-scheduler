@@ -330,9 +330,12 @@ const Scheduler: FC<SchedulerProps> = ({
     const HOURS = 24; //* 2
     const data = [];
     let dayStartHour = startOfDay(selectedDay);
+
     for (let i = 0; i <= HOURS; i++) {
       const id = `line_${i}`;
       const label = format(dayStartHour, "p", { locale: dateFnsLocale });
+      const dayEndHour = add(dayStartHour, { minutes: 60 });
+      const labelEnd = format(dayEndHour, "p", { locale: dateFnsLocale });
 
       //TODO Add everyday event capability
       //if (i === 0) {
@@ -343,7 +346,8 @@ const Scheduler: FC<SchedulerProps> = ({
 
       if (i > 0) {
         //Start processing bloc
-        const obj: Row = { id, label, days: [] };
+        const label2 = label + " - " + labelEnd;
+        const obj: Row = { id, label: label2, days: [] };
         const columns = getWeekHeader();
         // eslint-disable-next-line
         columns.map((column, index) => {
