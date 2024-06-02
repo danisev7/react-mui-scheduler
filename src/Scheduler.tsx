@@ -143,8 +143,8 @@ const Scheduler: FC<SchedulerProps> = ({
     options.transitionMode === TransitionMode.ZOOM
       ? Zoom
       : options.transitionMode === TransitionMode.FADE
-      ? Fade
-      : Slide;
+        ? Fade
+        : Slide;
 
   let dateFnsLocale: Locale;
   switch (locale) {
@@ -330,10 +330,13 @@ const Scheduler: FC<SchedulerProps> = ({
     const HOURS = 24; //* 2
     const data = [];
     let dayStartHour = startOfDay(selectedDay);
-
+    const dayEndtHour = add(dayStartHour, { minutes: 60 });
     for (let i = 0; i <= HOURS; i++) {
       const id = `line_${i}`;
-      const label = format(dayStartHour, "p", { locale: dateFnsLocale });
+      const label =
+        format(dayStartHour, "p", { locale: dateFnsLocale }) +
+        " - " +
+        format(dayStartHour, "p", { locale: dateFnsLocale });
 
       //TODO Add everyday event capability
       //if (i === 0) {
@@ -441,9 +444,9 @@ const Scheduler: FC<SchedulerProps> = ({
           message: `
             ${item?.label} successfully moved from ${oldObject?.startDate}
             ${format(oldObject?.startDate, "HH:mm")} to ${format(
-              item?.endDate,
-              "yyyy-mm-dd",
-            )} ${format(item?.startDate, "HH:mm")}
+            item?.endDate,
+            "yyyy-mm-dd",
+          )} ${format(item?.startDate, "HH:mm")}
           `,
         });
         setTimeout(() => {
