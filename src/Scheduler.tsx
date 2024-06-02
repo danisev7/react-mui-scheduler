@@ -330,13 +330,9 @@ const Scheduler: FC<SchedulerProps> = ({
     const HOURS = 24; //* 2
     const data = [];
     let dayStartHour = startOfDay(selectedDay);
-    const dayEndHour = add(dayStartHour, { minutes: 60 });
     for (let i = 0; i <= HOURS; i++) {
       const id = `line_${i}`;
-      const label =
-        format(dayStartHour, "p", { locale: dateFnsLocale }) +
-        " - " +
-        format(dayEndHour, "p", { locale: dateFnsLocale });
+      const label = format(dayStartHour, "p", { locale: dateFnsLocale });
 
       //TODO Add everyday event capability
       //if (i === 0) {

@@ -254,12 +254,9 @@ const Scheduler = ({ events, locale = "en", options, alertProps, onCellClick, le
         const HOURS = 24; //* 2
         const data = [];
         let dayStartHour = (0, date_fns_1.startOfDay)(selectedDay);
-        const dayEndHour = (0, date_fns_1.add)(dayStartHour, { minutes: 60 });
         for (let i = 0; i <= HOURS; i++) {
             const id = `line_${i}`;
-            const label = (0, date_fns_1.format)(dayStartHour, "p", { locale: dateFnsLocale }) +
-                " - " +
-                (0, date_fns_1.format)(dayEndHour, "p", { locale: dateFnsLocale });
+            const label = (0, date_fns_1.format)(dayStartHour, "p", { locale: dateFnsLocale });
             //TODO Add everyday event capability
             //if (i === 0) {
             //id = `line_everyday`; label = 'Everyday'
